@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Animation Portfolio</title>
+    <link rel="stylesheet" href="animation-style.css">
+</head>
+<body>
+    <div class="title"> 
+        <p> 2D Animation Portfolio </p>
+    </div>
+
+    <div class="computer-wrapper">
+        
+        <div class="project-sidebar">
+            <h3>2D Animation Projects</h3>
+            <ul>
+                <li>Final Project - 'Girl Like Me' Lyric Video</li>
+                <li>Cut-out Animation</li>
+                <li>Rotoscope Assignment</li>
+                <li>Stop Motion Assignment</li>
+                <li>Classwork (03/19)</li>
+                <li>Assignment 2</li>
+                <li>Gold Fish Short</li>
+                <li>Classwork (03/12)</li>
+            </ul>
+        </div>
+
+
+        <div class="monitor-screen">
+            <video id="portfolioVideo" autoplay loop controls controlsList="nodownload">
+                <source src="videos/jenay marte final project - PROGRESS.mp4" type="video/mp4">
+               
+            </video>
+        </div>
+
+        <button class="hotspot mouse-hotspot" id="nextBtn" title="Click Mouse for Next Video"></button>
+
+        <button class="hotspot keyboard-hotspot" id="prevBtn" title="Click Keyboard for Previous Video"></button>
+
+        
+    </div>
+<div class="computer-nav-group">
+            <a href="home.html" class="nav-btn home-btn">Home</a>
+        </div>
+    <script>
+        
+        const videoList = [
+            "videos/jenay marte final project - PROGRESS.mp4",
+            "videos/Project_1_Cut_out_Animation.mp4",
+            "videos/Assignment2_Rotoscope.mp4",
+            "videos/Assignment_3_Stop_motion.mp4",
+            "videos/classwork_03-19.mp4",
+            "videos/Assignment_2_Jenay_Marte.mp4",
+            "videos/Jenay_Marte_Gold_Fish.mp4",
+            "videos/classwork 03-12.mp4"
+        ];
+
+        let currentVideoIndex = 0;
+        
+        const videoElement = document.getElementById('portfolioVideo');
+        const nextButton = document.getElementById('nextBtn');
+        const prevButton = document.getElementById('prevBtn');
+
+        
+        function changeVideo(index) {
+            videoElement.src = videoList[index];
+            
+        
+            videoElement.muted = false; 
+            
+            videoElement.play();
+        }
+
+        nextButton.addEventListener('click', () => {
+            currentVideoIndex++;
+            if (currentVideoIndex >= videoList.length) {
+                currentVideoIndex = 0;
+            }
+            changeVideo(currentVideoIndex);
+        });
+
+
+        prevButton.addEventListener('click', () => {
+            currentVideoIndex--;
+            if (currentVideoIndex < 0) {
+                currentVideoIndex = videoList.length - 1; 
+            }
+            changeVideo(currentVideoIndex);
+        });
+    </script>
+
+</body>
+</html>

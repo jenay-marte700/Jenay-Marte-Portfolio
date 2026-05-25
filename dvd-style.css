@@ -1,0 +1,160 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100vh; 
+    font-family: 'Arial', sans-serif;
+    background-color: #d9ca96; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    padding: 10px; 
+    overflow: hidden;
+}
+
+
+
+.dvd-wrapper {
+    position: relative;
+    width: 95vw; 
+    max-width: 1450px; 
+    aspect-ratio: 850 / 478; 
+    background: url('images/DVD.gif') no-repeat center center;
+    background-size: contain; 
+    margin: 0 auto;
+}
+
+
+.content-box {
+    position: absolute;
+    top: 5%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.left-booklet {
+   
+    left: 16%;  
+    top: 10%;
+    width: 30%;  
+    padding: 4% 3%; 
+    color: #2b2b2b; 
+    overflow-y: auto; 
+}
+
+.left-booklet h2 {
+    font-size: 2.2vw; 
+    margin-bottom: 0.5vw;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.left-booklet .meta {
+    font-size: 1.2vw; 
+    margin-bottom: 0.2vw;
+}
+
+.left-booklet hr {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 1vw 0;
+}
+
+.left-booklet .description {
+    font-size: 1.3vw; 
+    line-height: 1.5;
+}
+
+
+.right-disc {
+    left: 46.5%;
+    top:-13%;
+    width: 41%;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; 
+}
+
+.disc-text {
+    color: #404040;
+    text-align: center;
+    font-size: 2.5vw; 
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+
+.next-btn {
+    position: absolute;
+    right: 50px; 
+    top: 45%;
+    color: #000;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.next-btn:hover {
+    color:rgb(0, 68, 255);
+}
+
+
+.watch-container {
+   
+    margin-top: 0px; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.watch-button-img {
+    
+    max-width: 220px; 
+    width: 100%;
+    height: auto;
+}
+
+.watch-link {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.watch-link:hover {
+    transform: scale(1.03); 
+}
+
+.watch-button-img {
+    max-width: 240px; 
+    width: 100%;
+    height: auto;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        justify-content: flex-start; 
+    }
+    
+    .dvd-wrapper {
+        max-width: 100%;
+    }
+
+    .left-booklet h2 { font-size: 4vw; }
+    .left-booklet .meta { font-size: 2.5vw; }
+    .left-booklet .description { font-size: 2.8vw; }
+    .disc-text { font-size: 4.5vw; }
+
+    .next-btn {
+        right: 10px;
+        top: -45px; 
+    }
+}

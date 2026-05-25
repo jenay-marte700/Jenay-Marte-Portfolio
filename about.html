@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Statement</title>
+    <link rel="stylesheet" href="about-style.css">
+</head>
+<body>
+    <div class="title"> 
+        <p> Click on the paper to view my artist statement! </p>
+    </div>
+
+<div class="home-button"> 
+        <a href="home.html" class="next-btn" title="Home">Home </a>
+    </div>
+
+    <div class="board-wrapper">
+        
+        <button class="paper-hotspot" id="openBtn" title="Click to read Artist Statement"> Jenay Marte's Artist Statement </button>
+    </div>
+
+    <div class="modal-overlay" id="statementModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            
+            <h2>Artist Statement</h2>
+           
+            <p>
+            
+I am a media maker motivated by the way music activates my imagination. When I listen to music, I naturally begin to imagine visuals that respond to its rhythm, tone, and emotional atmosphere. Sound is often the starting point for my creative process, guiding the pacing, color, and movement of my visuals. Creating is a way for me to translate what music makes me feel into something visual. <br><br>
+I grew up making home movies with friends and creating stop-motion animations with my Legos and action figures, which started my interest in filmmaking. In a high school film class, I worked on short silent films but focused on filming and post-production editing rather than writing the stories. Now, I primarily create motion graphics, including lyric videos, advertisement concepts, stage visuals, and promotional content for musicians. My projects help me explore how sound, design, and movement interact to create mood rather than traditional narrative.<br><br>
+Additionally, I’m interested in web design and coding, and I often reference early internet aesthetics in my motion graphic projects. Websites like ‘webdesignmuseum.org’ inspire me to recreate and reinterpret the visuals of the 1990s and early 2000s. Growing up watching television and playing video games shaped my appreciation for nostalgia and my interest in media and graphic design.
+<br><br>While I don’t have a specific defining inspiration for my film projects, learning about early silent films in my high school film class sparked my interest in visual storytelling without dialogue. I also admire filmmakers like Richard Linklater, whose work explores the emotional effects of time passing and the quietness of everyday life. In both my film and motion graphic work, I’m interested in expressing emotion through atmosphere and music rather than a straightforward narrative.
+
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+        const modal = document.getElementById('statementModal');
+        const openBtn = document.getElementById('openBtn');
+        const closeBtn = document.getElementById('closeBtn');
+
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+       
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
